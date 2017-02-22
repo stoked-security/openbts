@@ -26,6 +26,7 @@ config: configure-stamp
 configure-stamp: configure
 	dh_testdir
 	# Add here commands to configure the package.
+	./configure $(confflags)
 	touch configure-stamp
 
 #Architecture
@@ -121,3 +122,4 @@ binary-arch: build-arch install-arch
 
 binary: binary-arch binary-indep
 .PHONY: build clean binary-indep binary-arch binary install install-indep install-arch config
+
